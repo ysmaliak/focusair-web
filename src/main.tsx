@@ -41,7 +41,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="py-8 pb-[100vh] -mb-[calc(100vh-2rem)] border-t border-gray-100 bg-white">
+    <footer className="py-8 border-t border-gray-100 bg-white">
       <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-gray-500">
           © {new Date().getFullYear()} FocusAir
