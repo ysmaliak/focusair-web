@@ -1,13 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 
-export const Route = createFileRoute("/privacy")({
-  component: PrivacyPage,
-  head: () => ({
-    meta: [{ title: "Privacy Policy - FocusAir" }],
-  }),
-});
+export default function PrivacyPage() {
+  useEffect(() => {
+    document.title = "Privacy Policy - FocusAir";
+  }, []);
 
-function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <article className="prose">
@@ -212,7 +209,7 @@ function PrivacyPage() {
         </p>
         <p>
           If you believe we are unlawfully processing your personal information, you have the right to complain to your local data protection
-          supervisory authority. If you are in the EEA, you can find contact details for your supervisory authority here:
+          supervisory authority. If you are in the EEA, you can find contact details for your supervisory authority here:{" "}
           <a href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</a>.
         </p>
 

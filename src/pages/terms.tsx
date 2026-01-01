@@ -1,13 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 
-export const Route = createFileRoute("/terms")({
-  component: TermsPage,
-  head: () => ({
-    meta: [{ title: "Terms of Service - FocusAir" }],
-  }),
-});
+export default function TermsPage() {
+  useEffect(() => {
+    document.title = "Terms of Service - FocusAir";
+  }, []);
 
-function TermsPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
       <article className="prose">
@@ -289,7 +286,7 @@ function TermsPage() {
 
         <h2>13. Dispute Resolution</h2>
         <p>
-          The European Commission provides an online dispute resolution platform, which you can access at
+          The European Commission provides an online dispute resolution platform, which you can access at{" "}
           <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.
           If you would like to bring this subject to our attention, please contact us.
         </p>
