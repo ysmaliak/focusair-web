@@ -25,8 +25,13 @@ function TermsPage() {
         </p>
         <p>
           FocusAir is a focus and productivity application that helps users manage their time and improve concentration.
-          The app stores your data locally on your device and syncs via iCloud, which is managed by Apple Inc.
-          We do not maintain user accounts or store personal data on our servers.
+          The App stores your data locally on your device and may sync via iCloud, which is managed by Apple Inc.
+          We do not maintain user accounts or store your focus session data on our servers, and we process limited analytics and subscription
+          metadata as described in our Privacy Policy.
+        </p>
+        <p>
+          FocusAir provides general productivity tools and is not a medical, therapeutic, or professional service. We do not guarantee any
+          specific outcomes, and the Services are not intended for safety-critical or emergency use.
         </p>
         <p>
           You can contact us by email at <a href="mailto:support@focusair.app">support@focusair.app</a> or by mail to
@@ -165,13 +170,13 @@ function TermsPage() {
           <li>use the App to send automated queries to any website or to send any unsolicited commercial email; or</li>
           <li>use any proprietary information or any of our interfaces or our other intellectual property in the design, development, manufacture, licensing, or distribution of any applications, accessories, or devices for use with the App.</li>
         </ul>
-        <h3>Apple and Android Devices</h3>
+        <h3>Apple App Store</h3>
         <p>
-          The following terms apply when you use the App obtained from either the Apple Store or Google Play (each an "<strong>App Distributor</strong>")
-          to access the Services:
+          The following terms apply when you use the App obtained from the Apple App Store (the "<strong>App Distributor</strong>"). If we
+          make the App available through another app store, similar terms may apply.
         </p>
         <ul>
-          <li>the license granted to you for our App is limited to a non-transferable license to use the application on a device that utilizes the Apple iOS or Android operating systems, as applicable, and in accordance with the usage rules set forth in the applicable App Distributor's terms of service;</li>
+          <li>the license granted to you for our App is limited to a non-transferable license to use the application on a device that utilizes the iOS or iPadOS operating systems and in accordance with the usage rules set forth in the App Distributor's terms of service;</li>
           <li>we are responsible for providing any maintenance and support services with respect to the App as specified in the terms and conditions of this mobile application license contained in these Legal Terms or as otherwise required under applicable law, and you acknowledge that each App Distributor has no obligation whatsoever to furnish any maintenance and support services with respect to the App;</li>
           <li>in the event of any failure of the App to conform to any applicable warranty, you may notify the applicable App Distributor, and the App Distributor, in accordance with its terms and policies, may refund the purchase price, if any, paid for the App, and to the maximum extent permitted by applicable law, the App Distributor will have no other warranty obligation whatsoever with respect to the App;</li>
           <li>you represent and warrant that (i) you are not located in a country that is subject to a US government embargo, or that has been designated by the US government as a "terrorist supporting" country and (ii) you are not listed on any US government list of prohibited or restricted parties;</li>
@@ -184,24 +189,25 @@ function TermsPage() {
         <ul>
           <li>monitor the Services for violations of these Legal Terms;</li>
           <li>take appropriate legal action against anyone who, in our sole discretion, violates the law or these Legal Terms, including without limitation, reporting such user to law enforcement authorities;</li>
-          <li>in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your Contributions or any portion thereof;</li>
+          <li>in our sole discretion and without limitation, refuse, restrict access to, limit the availability of, or disable (to the extent technologically feasible) any of your content or data (if any) or any portion thereof;</li>
           <li>in our sole discretion and without limitation, notice, or liability, to remove from the Services or otherwise disable all files and content that are excessive in size or are in any way burdensome to our systems; and</li>
           <li>otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</li>
         </ul>
 
         <h2>6. Purchases and Subscriptions</h2>
         <p>
-          The Services may offer in-app purchases and subscriptions processed through RevenueCat and Apple's App Store. All purchases are
-          subject to the applicable store's terms and conditions. We accept payment through the payment methods available on Apple's App Store.
+          The Services may offer in-app purchases and subscriptions processed through RevenueCat and the Apple App Store. All purchases are
+          subject to the App Store's terms and conditions, and payments are handled by Apple.
         </p>
         <p>
-          You agree to provide current, complete, and accurate purchase and account information for all purchases made via the Services.
-          You further agree to promptly update account and payment information, including email address and payment method, so that we can
-          complete your transactions and contact you as needed.
+          Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. Your Apple ID account will
+          be charged within 24 hours prior to the end of the current period. You can manage and cancel subscriptions in your App Store account
+          settings.
         </p>
         <p>
-          Subscription prices may change with reasonable notice. Continued use of the Services after a price change constitutes acceptance
-          of the new pricing. Refunds are handled according to Apple's refund policies.
+          Free trials, if offered, convert to paid subscriptions unless canceled before the trial ends. Subscription prices may change with
+          reasonable notice. Continued use of the Services after a price change constitutes acceptance of the new pricing. Refunds are handled
+          according to Apple's refund policies.
         </p>
 
         <h2>7. Data Storage and iCloud</h2>
@@ -217,8 +223,8 @@ function TermsPage() {
         <h2>8. Third-Party Services</h2>
         <h3>Analytics</h3>
         <p>
-          We use PostHog for anonymized analytics to understand how users interact with the app and to improve our Services. This data does
-          not include personally identifiable information. For more information, see PostHog's privacy policy.
+          We use PostHog for analytics to understand how users interact with the App and to improve our Services. This data is generally
+          pseudonymous and used in aggregate. For more information, see PostHog's privacy policy.
         </p>
         <h3>Payment Processing</h3>
         <p>
@@ -226,15 +232,19 @@ function TermsPage() {
           (such as subscription status) but do not have access to your payment card details. Payment processing is subject to Apple's and
           RevenueCat's privacy policies.
         </p>
+        <p>
+          Third-party services are provided under their own terms and privacy policies. We are not responsible for third-party services or
+          their availability.
+        </p>
 
         <h2>9. Privacy Policy</h2>
         <p>
           We care about data privacy and security. Please review our Privacy Policy: <a href="/privacy">/privacy</a>. By using the Services,
-          you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are hosted
-          in the United States and European Union. If you access the Services from any other region of the world with laws or other requirements
-          governing personal data collection, use, or disclosure that differ from applicable laws in the United States and European Union, then
-          through your continued use of the Services, you are transferring your data to the United States and European Union, and you expressly
-          consent to have your data transferred to and processed in the United States and European Union.
+          you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised that our service
+          providers may process data in the United States, the European Union, or other countries. If you access the Services from any other
+          region with laws or requirements governing personal data collection, use, or disclosure that differ from applicable laws in those
+          regions, then through your continued use of the Services, you understand your data may be transferred to and processed in those
+          jurisdictions.
         </p>
 
         <h2>10. Term and Termination</h2>
@@ -247,10 +257,9 @@ function TermsPage() {
           SOLE DISCRETION.
         </p>
         <p>
-          If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name,
-          a fake or borrowed name, or the name of any third party, even if you may be acting on behalf of the third party. In addition to terminating
-          or suspending your account, we reserve the right to take appropriate legal action, including without limitation pursuing civil, criminal,
-          and injunctive redress.
+          If we terminate or suspend your access for any reason, you are prohibited from attempting to access the Services again without our
+          permission. In addition to terminating or suspending your access, we reserve the right to take appropriate legal action, including
+          without limitation pursuing civil, criminal, and injunctive redress.
         </p>
 
         <h2>11. Modifications and Interruptions</h2>
@@ -339,11 +348,9 @@ function TermsPage() {
 
         <h2>18. User Data</h2>
         <p>
-          We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well
-          as data relating to your use of the Services. Although we perform regular routine backups of data, you are solely responsible for all
-          data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability
-          to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or
-          corruption of such data.
+          We do not store your focus session data on our servers. You are responsible for maintaining your local data and backups (including via
+          iCloud). We may maintain limited telemetry or support communications as described in our Privacy Policy. We are not liable for any loss
+          or corruption of data caused by device issues, iCloud interruptions, or other circumstances beyond our control.
         </p>
 
         <h2>19. Electronic Communications, Transactions, and Signatures</h2>

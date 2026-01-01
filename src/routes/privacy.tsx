@@ -35,11 +35,12 @@ function PrivacyPage() {
           by reading the full policy below.</em>
         </p>
         <ul>
-          <li><strong>What personal information do we process?</strong> We process minimal personal information. Your app data is stored locally on your device and synced via iCloud (managed by Apple). We collect anonymized analytics data to improve our Services.</li>
+          <li><strong>What personal information do we process?</strong> We process limited information such as support communications and device/usage data. Your focus sessions, settings, and preferences are stored locally on your device and may sync via iCloud, which we cannot access.</li>
           <li><strong>Do we process any sensitive personal information?</strong> We do not process sensitive personal information.</li>
-          <li><strong>Do we receive any information from third parties?</strong> We receive limited information from payment processors (RevenueCat) regarding subscription status.</li>
-          <li><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, and to comply with law.</li>
-          <li><strong>In what situations and with which parties do we share personal information?</strong> We may share information with service providers (analytics, payment processing) as described in this policy.</li>
+          <li><strong>Do we receive any information from third parties?</strong> We receive limited subscription status and purchase metadata from Apple and RevenueCat.</li>
+          <li><strong>How do we process your information?</strong> We process your information to provide and improve the Services, manage subscriptions, provide support, maintain security, and comply with law.</li>
+          <li><strong>In what situations and with which parties do we share personal information?</strong> We may share information with service providers (analytics, subscriptions, hosting) as described in this policy.</li>
+          <li><strong>Do we sell or share personal information?</strong> We do not sell personal information or share it for cross-context behavioral advertising.</li>
           <li><strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.</li>
         </ul>
 
@@ -58,7 +59,7 @@ function PrivacyPage() {
           <strong>Information we may collect includes:</strong>
         </p>
         <ul>
-          <li><strong>Contact information.</strong> If you contact us for support, we may collect your email address and any information you choose to provide.</li>
+          <li><strong>Support communications.</strong> If you contact us for support, we may collect your email address, message content, and any information you choose to provide.</li>
         </ul>
 
         <h3>Information automatically collected</h3>
@@ -66,29 +67,26 @@ function PrivacyPage() {
           <em><strong>In Short:</strong> Some information — such as your device characteristics and usage patterns — is collected automatically when you use our Services.</em>
         </p>
         <p>
-          We automatically collect certain information when you use the App. This information does not reveal your specific identity
-          (like your name or contact information) but may include device and usage information, such as:
+          We automatically collect certain information when you use the App or visit our website. This information may include device,
+          log, and usage information, such as:
         </p>
         <ul>
-          <li><strong>Device Information.</strong> We collect device information such as device type, operating system and version, unique device identifiers, and general device characteristics.</li>
-          <li><strong>Usage Data.</strong> We collect information about how you interact with the App, including features used, actions taken, and time spent in the app. This data is anonymized and aggregated.</li>
+          <li><strong>Device and Log Data.</strong> We collect device type, operating system and version, app version, language, time zone, IP address, device identifiers, and general device characteristics.</li>
+          <li><strong>Usage Data.</strong> We collect information about how you interact with the App, including features used, actions taken, and time spent in the app. We use this data in aggregate to improve the Services.</li>
           <li><strong>Crash Reports and Performance Data.</strong> We collect crash logs and performance metrics to identify and fix bugs and improve app stability.</li>
         </ul>
         <p>
-          This information is collected through PostHog, our analytics provider, and is used to maintain and improve our Services.
-          This data does not include personally identifiable information.
+          This information is collected through PostHog, our analytics provider, and through our website hosting provider's standard logs.
+          We use it to maintain and improve our Services and we do not use it for advertising or to identify you.
         </p>
 
         <h3>Information collected through our App</h3>
         <p>
-          <em><strong>In Short:</strong> We do not collect location data or access your device sensors beyond what is necessary for app functionality.</em>
-        </p>
-        <p>
-          If you use our App, we do not access:
+          <em><strong>In Short:</strong> We collect only data needed to provide the App, such as notification tokens if you opt in. We do not access your contacts, photos, camera, microphone, or precise location.</em>
         </p>
         <ul>
-          <li><strong>Geolocation Information.</strong> We do not request or collect precise or approximate location data.</li>
-          <li><strong>Push Notifications.</strong> We may request to send you push notifications regarding focus session reminders. You can opt out at any time in your device settings.</li>
+          <li><strong>Push Notifications.</strong> If you opt in, we receive a device token from Apple to send you notifications. You can opt out at any time in your device settings.</li>
+          <li><strong>Device Permissions.</strong> The App does not request access to your contacts, photos, camera, microphone, or precise location.</li>
         </ul>
 
         <h2>2. How Do We Process Your Information?</h2>
@@ -100,12 +98,19 @@ function PrivacyPage() {
         </p>
         <ul>
           <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
+          <li><strong>To manage subscriptions and entitlements.</strong> We may process limited purchase and subscription data to confirm access to paid features.</li>
           <li><strong>To respond to user inquiries/offer support to users.</strong> We may process your information to respond to your inquiries and solve any potential issues you might have with the requested service.</li>
           <li><strong>To send administrative information to you.</strong> We may process your information to send you details about our products and services, changes to our terms and policies, and other similar information.</li>
-          <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
-          <li><strong>To identify usage trends.</strong> We may process anonymized usage data to understand how our Services are being used so we can improve them.</li>
-          <li><strong>To determine the effectiveness of our marketing and promotional campaigns.</strong> We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.</li>
+          <li><strong>To maintain safety and security.</strong> We may process your information to keep the Services secure, prevent fraud, and enforce our policies.</li>
+          <li><strong>To identify usage trends and improve the Services.</strong> We may process usage data to understand how our Services are being used so we can improve them.</li>
+          <li><strong>To comply with legal obligations.</strong> We may process your information to meet applicable legal or regulatory requirements.</li>
         </ul>
+        <h3>Legal bases for processing (EEA/UK)</h3>
+        <p>
+          If you are in the EEA, UK, or Switzerland, we process your information when it is necessary to perform our contract with you,
+          to comply with legal obligations, to pursue our legitimate interests (such as improving and securing the Services), and with your
+          consent where required (for example, to send push notifications). You can withdraw consent at any time through your device settings.
+        </p>
 
         <h2>3. When and With Whom Do We Share Your Personal Information?</h2>
         <p>
@@ -117,22 +122,29 @@ function PrivacyPage() {
         <ul>
           <li><strong>Service Providers.</strong> We may share your information with service providers who perform services for us or on our behalf, including:
             <ul>
-              <li><strong>PostHog</strong> - for anonymized analytics</li>
-              <li><strong>RevenueCat</strong> - for subscription and payment management</li>
-              <li><strong>Apple</strong> - for app distribution and iCloud synchronization</li>
+              <li><strong>PostHog</strong> - for analytics and product insights</li>
+              <li><strong>RevenueCat</strong> - for subscription and entitlement management</li>
+              <li><strong>Apple</strong> - for App Store distribution, in-app purchases, and iCloud synchronization</li>
+              <li><strong>Hosting and infrastructure providers</strong> - to deliver and secure our website</li>
             </ul>
           </li>
           <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
           <li><strong>Legal Obligations.</strong> We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process.</li>
           <li><strong>Vital Interests and Legal Rights.</strong> We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person and illegal activities, or as evidence in litigation in which we are involved.</li>
         </ul>
+        <h3>International data transfers</h3>
+        <p>
+          Our service providers may process data in the United States, the European Union, or other countries. Where required by law, we rely
+          on appropriate safeguards such as standard contractual clauses for these transfers.
+        </p>
 
         <h2>4. Do We Use Cookies and Other Tracking Technologies?</h2>
         <p>
-          <em><strong>In Short:</strong> We do not use cookies in our mobile application.</em>
+          <em><strong>In Short:</strong> We do not use cookies in our mobile application, and our website does not use cookies for advertising.</em>
         </p>
         <p>
-          Our mobile application does not use cookies. We use PostHog for analytics, which collects anonymized usage data as described in Section 1.
+          Our mobile application does not use cookies. Our website may use strictly necessary cookies or similar technologies for security and
+          performance. We do not use cookies for advertising or cross-site tracking.
         </p>
 
         <h2>5. How Long Do We Keep Your Information?</h2>
@@ -150,6 +162,10 @@ function PrivacyPage() {
         <p>
           Analytics data is retained according to PostHog's data retention policies. Subscription data through RevenueCat is retained
           as necessary to manage your subscription and for financial record-keeping.
+        </p>
+        <p>
+          Support communications are retained as long as needed to address your request and for record-keeping, unless a longer retention
+          period is required by law.
         </p>
 
         <h2>6. How Do We Keep Your Information Safe?</h2>
@@ -207,7 +223,7 @@ function PrivacyPage() {
         <ul>
           <li><strong>Delete local app data:</strong> Uninstall the App from your device</li>
           <li><strong>Manage iCloud data:</strong> Through your device's iCloud settings</li>
-          <li><strong>Request analytics data deletion:</strong> Contact us at <a href="mailto:support@focusair.app">support@focusair.app</a></li>
+          <li><strong>Request support data deletion:</strong> Contact us at <a href="mailto:support@focusair.app">support@focusair.app</a></li>
         </ul>
 
         <h2>8. Controls for Do-Not-Track Features</h2>
@@ -243,11 +259,8 @@ function PrivacyPage() {
           request, please submit your request in writing to us using the contact information provided below.
         </p>
         <p>
-          If you are under 18 years of age, reside in California, and have a registered account with the Services, you have the right to
-          request removal of unwanted data that you publicly post on the Services. To request removal of such data, please contact us using
-          the contact information provided below and include the email address associated with your account and a statement that you reside
-          in California. We will make sure the data is not publicly displayed on the Services, but please be aware that the data may not be
-          completely or comprehensively removed from all our systems (e.g., backups, etc.).
+          We do not sell or share personal information as defined by California law, and we do not use sensitive personal information for
+          purposes that require an opt-out.
         </p>
 
         <h3>CCPA Privacy Notice</h3>
@@ -268,15 +281,21 @@ function PrivacyPage() {
           <strong>Your rights with respect to your personal data:</strong>
         </p>
         <ul>
+          <li>Right to know what personal data we collect and how we use it</li>
           <li>Right to request deletion of your data</li>
-          <li>Right to be informed about what data we collect</li>
+          <li>Right to correct inaccurate personal data</li>
+          <li>Right to opt out of the sale or sharing of your personal information (Note: We do not sell or share personal information)</li>
+          <li>Right to limit the use and disclosure of sensitive personal information (Note: We do not use sensitive personal information for these purposes)</li>
           <li>Right to non-discrimination for exercising your privacy rights</li>
-          <li>Right to opt-out of the sale of your personal information (Note: We do not sell personal information)</li>
         </ul>
-
-        <h2>11. Do Virginia Residents Have Specific Privacy Rights?</h2>
         <p>
-          <em><strong>In Short:</strong> Yes, if you are a resident of Virginia, you may be granted specific rights regarding access to and use of your personal information.</em>
+          We may need to verify your request before completing it. Authorized agents may submit requests on your behalf if they provide proof
+          of authorization.
+        </p>
+
+        <h2>11. Do Virginia and Other US State Residents Have Specific Privacy Rights?</h2>
+        <p>
+          <em><strong>In Short:</strong> Yes, if you are a resident of Virginia or certain other US states, you may be granted specific rights regarding access to and use of your personal information.</em>
         </p>
         <p>
           Under the Virginia Consumer Data Protection Act (VCDPA), Virginia residents have the right to:
@@ -292,17 +311,22 @@ function PrivacyPage() {
         <p>
           To exercise these rights, please contact us at <a href="mailto:support@focusair.app">support@focusair.app</a>.
         </p>
+        <p>
+          Residents of Colorado, Connecticut, and Utah may have similar rights, including access, deletion, correction, and the ability to
+          opt out of targeted advertising or the sale of personal data where applicable. We will honor applicable requests in accordance
+          with those laws.
+        </p>
 
         <h2>12. Do We Collect Information from Minors?</h2>
         <p>
-          <em><strong>In Short:</strong> We do not knowingly collect data from or market to children under 13 years of age.</em>
+          <em><strong>In Short:</strong> We do not knowingly collect data from or market to children under 13 years of age (or the age of digital consent in your jurisdiction).</em>
         </p>
         <p>
           We do not knowingly solicit data from or market to children under 13 years of age. By using the Services, you represent that you
           are at least 13 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Services.
-          If we learn that personal information from users less than 13 years of age has been collected, we will deactivate the account and
-          take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from
-          children under age 13, please contact us at <a href="mailto:support@focusair.app">support@focusair.app</a>.
+          If we learn that personal information from users less than 13 years of age has been collected, we will take reasonable measures
+          to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 13,
+          please contact us at <a href="mailto:support@focusair.app">support@focusair.app</a>.
         </p>
 
         <h2>13. How Can You Contact Us About This Notice?</h2>
@@ -323,12 +347,16 @@ function PrivacyPage() {
           <a href="mailto:support@focusair.app">support@focusair.app</a>.
         </p>
         <p>
+          Some analytics data is anonymized or aggregated and cannot be reasonably linked back to you. In those cases, we may be unable to
+          fulfill a deletion request for that data.
+        </p>
+        <p>
           Since your app data is stored locally and in iCloud, you have full control over it:
         </p>
         <ul>
           <li>Delete local data by uninstalling the App</li>
           <li>Manage iCloud data through your device settings</li>
-          <li>Request deletion of analytics data by contacting us</li>
+          <li>Request deletion of support communications by contacting us</li>
         </ul>
       </article>
     </div>
