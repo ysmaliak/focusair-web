@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-gray-900 leading-relaxed;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-gray-700 leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply text-4xl font-extrabold text-gray-900 mb-6 mt-0 tracking-tight;
+  }
+
+  .prose h2 {
+    @apply text-xl font-bold text-gray-900 mb-4 mt-12 pt-6 border-t border-gray-100;
+  }
+
+  .prose h2:first-of-type {
+    @apply mt-8 pt-0 border-t-0;
+  }
+
+  .prose h3 {
+    @apply text-lg font-semibold text-gray-900 mb-3 mt-8;
+  }
+
+  .prose p {
+    @apply mb-4 text-base leading-7;
+  }
+
+  .prose ul {
+    @apply mb-4 pl-5 space-y-2;
+  }
+
+  .prose ul ul {
+    @apply mt-2 mb-0;
+  }
+
+  .prose li {
+    @apply text-base leading-7;
+  }
+
+  .prose li::marker {
+    @apply text-gray-400;
+  }
+
+  .prose a {
+    @apply text-gray-900 underline underline-offset-2 decoration-gray-300 hover:decoration-gray-900 transition-colors;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose em {
+    @apply text-gray-600;
+  }
+}
