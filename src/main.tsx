@@ -16,7 +16,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 before:absolute before:inset-x-0 before:bottom-full before:h-screen before:bg-gray-50">
       <nav className="flex items-center gap-1 px-2 py-2 bg-white/70 backdrop-blur-md rounded-full shadow-lg shadow-black/5 border border-white/50">
         <Link
           to="/"
