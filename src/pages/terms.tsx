@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function TermsPage() {
   useEffect(() => {
-    document.title = "Terms of Service - FocusAir";
+    document.title = "Terms - FocusAir";
   }, []);
 
   return (

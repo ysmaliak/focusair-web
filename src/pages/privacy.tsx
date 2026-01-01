@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export default function PrivacyPage() {
   useEffect(() => {
-    document.title = "Privacy Policy - FocusAir";
+    document.title = "Privacy - FocusAir";
   }, []);
 
   return (
