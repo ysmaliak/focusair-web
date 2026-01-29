@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import "./styles/app.css";
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 // Layout
 function Layout({ children }: { children: React.ReactNode }) {
@@ -10,7 +21,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       {/* Top overscroll background */}
       <div className="fixed top-0 left-0 right-0 h-screen -translate-y-full bg-gray-50 z-40" />
       <Header />
-      <main className="flex-1 pt-24">{children}</main>
+      <main className="flex-1 pt-20 sm:pt-24">{children}</main>
       <Footer />
     </div>
   );
@@ -18,21 +29,21 @@ function Layout({ children }: { children: React.ReactNode }) {
 
 function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
-      <nav className="flex items-center gap-1 px-2 py-2 bg-white/70 backdrop-blur-md rounded-full shadow-lg shadow-black/5 border border-white/50">
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-4">
+      <nav className="flex items-center gap-1.5 px-2.5 py-2 bg-white/80 backdrop-blur-md rounded-full shadow-lg shadow-black/[0.03] border border-gray-200/50">
         <Link
           to="/"
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors"
+          className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full hover:bg-gray-100 transition-colors"
         >
-          <span className="text-lg font-bold">F</span>
+          <img src="/AppIcon.png" alt="FocusAir" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg" />
         </Link>
-        <div className="w-px h-6 bg-gray-200 mx-1" />
+        <div className="w-px h-5 sm:h-6 bg-gray-200 mx-1" />
         <a
           href="https://apps.apple.com/app/focusair"
-          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
+          className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
         >
           Get the app
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
@@ -43,21 +54,24 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="py-8 border-t border-gray-100 bg-white">
-      <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} FocusAir
-        </p>
-        <div className="flex items-center gap-6">
-          <Link to="/terms" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+    <footer className="py-6 sm:py-8 border-t border-gray-100 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+        <div className="flex items-center gap-2">
+          <img src="/AppIcon.png" alt="" className="w-5 h-5 sm:w-6 sm:h-6 rounded-md" />
+          <p className="text-xs sm:text-sm text-gray-500">
+            © {new Date().getFullYear()} FocusAir
+          </p>
+        </div>
+        <div className="flex items-center gap-5 sm:gap-6">
+          <Link to="/terms" className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors">
             Terms
           </Link>
-          <Link to="/privacy" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+          <Link to="/privacy" className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors">
             Privacy
           </Link>
           <a
             href="mailto:support@focusair.app"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors"
           >
             Contact
           </a>
@@ -67,28 +81,91 @@ function Footer() {
   );
 }
 
+// Download Page
+function DownloadPage() {
+  const appStoreUrl = 'https://apps.apple.com/app/focusair';
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.href = appStoreUrl;
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50">
+      <img
+        src="/AppIcon.png"
+        alt="FocusAir App Icon"
+        className="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl shadow-2xl"
+      />
+      <h1 className="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 mb-6 sm:mb-8 text-center text-gray-900">
+        FocusAir: Deep Focus Timer
+      </h1>
+      <a
+        href={appStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transform hover:scale-105 transition-transform duration-200"
+      >
+        <img
+          src="/Download_on_the_App_Store_Badge_US-UK.svg"
+          alt="Download on the App Store"
+          className="h-14 sm:h-16 w-auto"
+        />
+      </a>
+
+      <div className="fixed top-4 right-2 z-50 w-full max-w-xs">
+        <div className="relative bg-white text-gray-900 px-5 pb-5 rounded-3xl shadow-xl border border-gray-200">
+          <div className="absolute top-0 right-6 transform -translate-y-full w-0 h-0 border-t-[12px] border-t-transparent border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-white"></div>
+          <div className="flex justify-center">
+            <img
+              src="/tiktok-icon.png"
+              alt="TikTok Icon"
+              className="w-20 h-20"
+            />
+          </div>
+          <p className="text-center text-sm text-gray-600">
+            On TikTok, tap the three dots (...) and select 'Open in browser' to download
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Pages
 function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] px-6">
+    <div className="flex flex-col items-center justify-center min-h-[65vh] px-5 sm:px-6">
       <div className="text-center max-w-2xl">
-        <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
-          Focus better.
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-5 sm:mb-6 leading-[1.1]">
+          Your focus is cleared for takeoff.
         </h1>
-        <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-          FocusAir helps you stay focused and achieve more.
-          <br className="hidden sm:block" />
-          Available now on the App Store.
+        <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed">
+          Every focus session is a flight. Track your progress, block distractions, and reach new altitudes of productivity.
         </p>
         <a
           href="https://apps.apple.com/app/focusair"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full font-semibold text-lg hover:bg-gray-800 transition-all hover:scale-105 shadow-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block transform hover:scale-105 transition-transform duration-200"
         >
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          Download on the App Store
+          <img
+            src="/Download_on_the_App_Store_Badge_US-UK.svg"
+            alt="Download on the App Store"
+            className="h-12 sm:h-14 w-auto"
+          />
         </a>
+      </div>
+
+      {/* Hero Image */}
+      <div className="mt-12 sm:mt-16 mb-8 sm:mb-12 w-full max-w-4xl px-2 sm:px-4">
+        <img
+          src="/hero-image.png"
+          alt="FocusAir App Screenshots"
+          className="w-full h-auto max-h-[65vh] object-contain"
+        />
       </div>
     </div>
   );
@@ -101,9 +178,11 @@ import PrivacyPage from "./pages/privacy";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/download" element={<DownloadPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
