@@ -39,7 +39,7 @@ function Header() {
         </Link>
         <div className="w-px h-5 sm:h-6 bg-gray-200 mx-1" />
         <a
-          href="https://apps.apple.com/app/focusair"
+          href="https://apps.apple.com/app/id6756526902"
           className="flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-full transition-colors"
         >
           Get the app
@@ -83,7 +83,7 @@ function Footer() {
 
 // Download Page
 function DownloadPage() {
-  const appStoreUrl = 'https://apps.apple.com/app/focusair';
+  const appStoreUrl = 'https://apps.apple.com/app/id6756526902';
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -146,7 +146,7 @@ function HomePage() {
           Every focus session is a flight. Track your progress, block distractions, and reach new altitudes of productivity.
         </p>
         <a
-          href="https://apps.apple.com/app/focusair"
+          href="https://apps.apple.com/app/id6756526902"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block transform hover:scale-105 transition-transform duration-200"
