@@ -1,71 +1,396 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  html {
-    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    @apply bg-gray-50;
-  }
+@font-face {
+  font-family: "Bowlby One SC";
+  src: url("/fonts/bowlby-one-sc.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  body {
-    @apply bg-white text-gray-900 leading-relaxed;
+:root {
+  --page: #f6f7fa;
+  --surface: #ffffff;
+  --raised: #ffffff;
+  --sunken: #e4edfb;
+  --ink: #0a1428;
+  --ink-2: #5a6b86;
+  --ink-inverse: #ffffff;
+  --brand: #1e6bff;
+  --cyan: #00c2ff;
+  --green: #1fb85c;
+  --sun: #ff9f1c;
+  --gold: #ffc24d;
+  --dusk: #7c5cff;
+  --navy: #1e4374;
+  --teal: #15b8a6;
+  --pink: #f52d8b;
+  --red: #f23b3b;
+  --outline: rgba(10, 20, 40, 0.08);
+  --shade: rgba(10, 27, 58, 0.1);
+  --shade-strong: rgba(10, 27, 58, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #080a0f;
+    --surface: #161d33;
+    --raised: #1f2845;
+    --sunken: #0e1424;
+    --ink: #ffffff;
+    --ink-2: #9fb0cc;
+    --ink-inverse: #0b1020;
+    --brand: #2e74ff;
+    --cyan: #16c8ff;
+    --green: #29cc68;
+    --sun: #ffa62b;
+    --dusk: #8a67ff;
+    --navy: #254a80;
+    --teal: #1ac7b4;
+    --pink: #ff3c94;
+    --red: #ff4a45;
+    --outline: rgba(255, 255, 255, 0.1);
+    --shade: rgba(0, 0, 0, 0.28);
+    --shade-strong: rgba(0, 0, 0, 0.45);
   }
 }
 
-@layer components {
-  .prose {
-    @apply text-gray-700 leading-relaxed;
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-inverse: var(--ink-inverse);
+  --color-brand: var(--brand);
+  --color-cyan: var(--cyan);
+  --color-green: var(--green);
+  --color-sun: var(--sun);
+  --color-gold: var(--gold);
+  --color-dusk: var(--dusk);
+  --color-navy: var(--navy);
+  --color-teal: var(--teal);
+  --color-pink: var(--pink);
+  --color-red: var(--red);
+  --color-outline: var(--outline);
+  --color-ink-dark: #0b1020;
+  --color-night: #0a1428;
+  --font-display: "Bowlby One SC", "Arial Black", sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  --shadow-card: 0 3px 6px var(--shade);
+  --shadow-sticker: 0 1.5px 3px var(--shade);
+  --shadow-lifted: 0 18px 40px var(--shade);
+}
+
+html {
+  background: var(--page);
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  overflow-x: clip;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.bowlby {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.sky {
+  background: linear-gradient(180deg, #7db0ff 0%, #2e74ff 38%, #1e6bff 72%, #1550d6 100%);
+}
+
+.sticker {
+  filter: url(#sticker-outline) drop-shadow(0 4px 6px var(--shade));
+}
+
+.sticker-bare {
+  filter: drop-shadow(0 4px 6px var(--shade));
+}
+
+.sticker-text {
+  -webkit-text-stroke: 0.14em #fff;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.06em 0.1em rgba(10, 27, 58, 0.3));
+}
+
+.sky-notch {
+  background: #2e74ff;
+}
+
+.condensed {
+  font-stretch: condensed;
+}
+
+.stage {
+  --slant: clamp(28px, 4vw, 60px);
+}
+
+.slant-l {
+  clip-path: polygon(0 var(--slant), 100% 0, 100% 100%, 0 100%);
+  margin-top: calc(-1 * var(--slant));
+  padding-top: calc(var(--slant) + 5rem);
+}
+
+.slant-r {
+  clip-path: polygon(0 0, 100% var(--slant), 100% 100%, 0 100%);
+  margin-top: calc(-1 * var(--slant));
+  padding-top: calc(var(--slant) + 5rem);
+}
+
+.plate {
+  display: inline-block;
+  transform: skewX(-8deg) rotate(-1.5deg);
+  box-shadow: 4px 4px 0 rgba(10, 20, 40, 0.22);
+}
+
+.plate > * {
+  display: inline-block;
+  transform: skewX(8deg);
+}
+
+.springy {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.springy:hover {
+  transform: scale(1.05) rotate(var(--tilt, 0deg));
+}
+
+.springy:active {
+  transform: scale(0.95) rotate(var(--tilt, 0deg));
+}
+
+.tilted {
+  transform: rotate(var(--tilt, 0deg));
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--tilt, 0deg));
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-14px);
+  }
+  to {
+    transform: translateX(14px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.floaty {
+  animation: float 7s ease-in-out infinite;
+}
+
+.drifty {
+  animation: drift 16s ease-in-out infinite alternate;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-js] .reveal .rise {
+    opacity: 0;
+    transform: translateY(34px) scale(0.98);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .prose h1 {
-    @apply text-4xl font-extrabold text-gray-900 mb-6 mt-0 tracking-tight;
+  html[data-js] .reveal.in .rise {
+    opacity: 1;
+    transform: none;
   }
 
-  .prose h2 {
-    @apply text-xl font-bold text-gray-900 mb-4 mt-12 pt-6 border-t border-gray-100;
+  html[data-js] .reveal .slam {
+    opacity: 0;
+    transform: scale(2.3) rotate(var(--tilt, 0deg));
   }
 
-  .prose h2:first-of-type {
-    @apply mt-8 pt-0 border-t-0;
+  html[data-js] .reveal.in .slam {
+    opacity: 1;
+    transform: scale(1) rotate(var(--tilt, 0deg));
+    transition:
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) var(--pop-delay, 0.12s),
+      opacity 0.18s linear var(--pop-delay, 0.12s);
   }
 
-  .prose h3 {
-    @apply text-lg font-semibold text-gray-900 mb-3 mt-8;
+  html[data-js] .reveal .pop {
+    opacity: 0;
+    transform: scale(0.4) rotate(var(--tilt, 0deg));
   }
 
-  .prose p {
-    @apply mb-4 text-base leading-7;
+  html[data-js] .reveal.in .pop {
+    opacity: 1;
+    transform: scale(1) rotate(var(--tilt, 0deg));
+    transition:
+      transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) var(--pop-delay, 0.15s),
+      opacity 0.2s linear var(--pop-delay, 0.15s);
   }
 
-  .prose ul {
-    @apply mb-4 pl-5 space-y-2;
+  html[data-js] .hero-rise {
+    animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--rise-delay, 0s);
   }
 
-  .prose ul ul {
-    @apply mt-2 mb-0;
+  html[data-js] .hero-slam {
+    animation: hero-slam 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: var(--rise-delay, 0.5s);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+}
+
+@keyframes hero-slam {
+  from {
+    opacity: 0;
+    transform: scale(2.4) rotate(var(--tilt, 0deg));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--tilt, 0deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floaty,
+  .drifty {
+    animation: none;
   }
 
-  .prose li {
-    @apply text-base leading-7;
+  .marquee-track {
+    animation: none;
   }
 
-  .prose li::marker {
-    @apply text-gray-400;
+  .springy,
+  .springy:hover,
+  .springy:active {
+    transition: none;
+    transform: rotate(var(--tilt, 0deg));
   }
 
-  .prose a {
-    @apply text-gray-900 underline underline-offset-2 decoration-gray-300 hover:decoration-gray-900 transition-colors;
+  html {
+    scroll-behavior: auto;
   }
+}
 
-  .prose strong {
-    @apply font-semibold text-gray-900;
-  }
+.prose {
+  color: var(--ink-2);
+  line-height: 1.75;
+}
 
-  .prose em {
-    @apply text-gray-600;
-  }
+.prose h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--ink);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose h2 {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px solid var(--outline);
+}
+
+.prose h2:first-of-type {
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.prose h3 {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.06rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  list-style: disc;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.prose ul ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose li::marker {
+  color: var(--brand);
+}
+
+.prose a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--brand) 40%, transparent);
+  transition: text-decoration-color 0.2s;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--brand);
+}
+
+.prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.prose em {
+  color: var(--ink-2);
 }

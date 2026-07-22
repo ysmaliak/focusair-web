@@ -1,15 +1,25 @@
-import { useEffect } from "react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Eyebrow } from "~/components/Eyebrow";
+import { Shell } from "~/components/Shell";
 
-export default function TermsPage() {
-  useEffect(() => {
-    document.title = "Terms - FocusAir";
-  }, []);
+export const Route = createFileRoute("/terms")({
+  head: () => ({
+    meta: [{ title: "Terms & Conditions — FocusAir" }],
+  }),
+  component: TermsPage,
+});
 
+function TermsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <article className="prose">
-        <p className="text-sm text-gray-500 mb-2">Last updated: January 1, 2026</p>
-        <h1>Terms &amp; Conditions</h1>
+    <Shell>
+      <div className="mx-auto max-w-3xl px-4 pt-28 pb-8 sm:px-6 sm:pt-36 sm:pb-12">
+        <div className="mb-8 px-2 sm:px-0">
+          <Eyebrow className="text-brand">The fine print</Eyebrow>
+          <h1 className="bowlby text-ink mt-3 text-3xl sm:text-4xl">Terms &amp; Conditions</h1>
+          <p className="text-ink-2 mt-3 text-sm">Last updated: January 1, 2026</p>
+        </div>
+        <article className="prose border-outline bg-surface shadow-card rounded-[28px] border-[1.5px] p-6 sm:p-10">
+
 
         <h2>Agreement to Our Legal Terms</h2>
         <p>
@@ -394,7 +404,8 @@ export default function TermsPage() {
           Poland<br />
           <a href="mailto:support@focusair.app">support@focusair.app</a>
         </p>
-      </article>
-    </div>
+        </article>
+      </div>
+    </Shell>
   );
 }
