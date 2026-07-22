@@ -81,22 +81,6 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <svg width="0" height="0" aria-hidden style={{ position: "absolute" }}>
-          <defs>
-            <filter id="sticker-outline" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="grown" />
-              <feComponentTransfer in="grown" result="solid">
-                <feFuncA type="linear" slope="24" intercept="-1.2" />
-              </feComponentTransfer>
-              <feFlood floodColor="#ffffff" />
-              <feComposite in2="solid" operator="in" result="outline" />
-              <feMerge>
-                <feMergeNode in="outline" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-        </svg>
         {children}
         <Scripts />
       </body>

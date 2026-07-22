@@ -110,11 +110,20 @@ body {
 }
 
 .sticker {
-  filter: url(#sticker-outline) drop-shadow(0 4px 6px var(--shade));
+  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff)
+    drop-shadow(0 -1.5px 0 #fff) drop-shadow(1.06px 1.06px 0 #fff)
+    drop-shadow(-1.06px 1.06px 0 #fff) drop-shadow(1.06px -1.06px 0 #fff)
+    drop-shadow(-1.06px -1.06px 0 #fff) drop-shadow(0 0 0.5px #fff)
+    drop-shadow(0 4px 6px var(--shade));
 }
 
 .sticker-bare {
   filter: drop-shadow(0 4px 6px var(--shade));
+}
+
+.sticker,
+.sticker-bare {
+  will-change: filter;
 }
 
 .sticker-text {
